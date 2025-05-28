@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Landing page</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-book" id="nav_logo"> Cursinho Popular Brasilandia</i>
+            <ul id="nav_list">
+                <li class="nav-item active">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Concursos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+            </ul>
+
+           <div id="user-area">
+  <a href="./Login-Registro/cadastro.html" id="cadastro-link">
+    <button class="btn-default">Cadastre-se</button>
+  </a>
+</div>
+
+
+            <button id="mobile_btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Concursos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+            </ul>               
+        </div>
+    </header>
+
+    <main id="content">
+        <section id="home">
+            <div class="shape"></div>
+            <div id="cta">
+                <h1 class="title">
+                  Voluntários transformam realidades
+                    <span> para você</span>
+                </h1>
+
+                <p class="description">
+                    Voluntários que acreditam na educação como ferramenta de transformação de realidades
+                </p>
+
+                <div id="cta_buttons">
+                    <a href="https://www.google.com/maps/place/Av.+General+Penha+Brasil,+2508+-+Brasilandia,+São+Paulo+-+SP,+02673-000/@-23.4529034,-46.6752931,15z/data=!4m16!1m9!3m8!1s0x94cef9fc06b7fb25:0x394f11cfe6fbe928!2sAv.+General+Penha+Brasil,+2508+-+Brasilandia,+São+Paulo+-+SP,+02673-000!3b1!8m2!3d-23.4528929!4d-46.6751801!10e5!16s%2Fg%2F11c4rvs_0t!3m5!1s0x94cef9fc06b7fb25:0x394f11cfe6fbe928!8m2!3d-23.4528929!4d-46.6751801!16s%2Fg%2F11c4rvs_0t?entry=ttu" class="btn-default">
+                        <button class="btn-default">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </button>
+                        Localização
+                    </a>
+                <div id="cta_buttons">    
+                    <a href="tel:+55555555555" id="phone_button">
+                        <button class="btn-default">
+                            <i class="fa-solid fa-phone"></i>
+                        </button>
+                        (11) 98770-3005
+                    </a>
+                </div>
+            </div>    
+
+                <div class="social-media-buttons">
+                    <a href="https://api.whatsapp.com/send?phone=55011987703005">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/cursinhopopularbrasilandia?igsh=MThzNm5nNG1yOGxibw%3D%3D">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/profile.php?id=61555384450944">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div id="banner">
+                <img src="src/images/jovem-cruzando-os-bracos-e-olhando-para-a-camera-em-fundo-transparente_401927-1904.png" alt="">
+            </div>
+        </section>
+
+        <section id="menu">
+            <h2 class="section-title">ATENÇÃO! Confira os calendários dos principais vestibulares de São Paulo. </h2>
+            <h3 class="section-subtitle"></h3>
+
+            <div id="Estudos">
+                <div class="estudo">
+                    <div class="estudo-heart">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <img src="src/images/Unicamp.jpg" class="estudo-image" alt="">
+
+                    <h3 class="estudo-title">
+                        UNICAMP
+                    </h3>
+                    <span class="estudo-description">
+                        Solicitar isenção de taxa: 13/05 a 07/06
+                        Inscrições: 01/08 a 30/08
+                        Aplicação fase 1: 20/10
+                        Aplicação fase 2: 01/12 e 02/12
+                    </span>
+                </div>
+
+                <div class="estudo">
+                    <div class="estudo-heart">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <img src="src/images/Enem.jpg" class="estudo-image" alt="">
+
+                    <h3 class="estudo-title">
+                        ENEM
+                    </h3>
+
+                    <span class="estudo-description">
+                        Inscrições: 27/05 a 07/06
+                        Aplicação: 03/11 e 10/11
+                        Divulgação do gabarito: 20/11
+                        Resultados: 13/01/25
+                    </span>
+                </div>
+
+                <div class="estudo">
+                    <div class="estudo-heart">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <img src="src/images/Fuverest.jpg" class="estudo-image" alt="">
+
+                    <h3 class="estudo-title">
+                        FUVEREST
+                    </h3>
+
+                    <span class="estudo-description">
+                        Solicitar isenção de taxa: 14/05 a 12/07
+                        Inscrições: 19/08 a 08/10
+                        Aplicação fase 1: 17/11
+                        Aplicação fase 2: 15/12 e 16/12
+                    </span>
+                </div>
+
+                <div class="estudo">
+                    <div class="estudo-heart">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+
+                    <img src="src/images/Unesp.jpg" class="estudo-image" alt="">
+
+                    <h3 class="estudo-title">
+                        UNESP
+                    </h3>
+                    <span class="estudo-description">
+                        Solicitar isenção de taxa: 28/08 a 03/09
+                        Inscrições: 04/09 a 09/10
+                        Aplicação fase 1: 15/11
+                        Aplicação fase 2: 10/12 e 11/12
+                    </span>
+                 </div>
+        </section>
+
+        <section id="testimonials">
+            <img src="src/images/estudando.png" id="testimonial_chef" alt="">
+
+            <div id="testimonials_content">
+                <h2 class="section-title">
+                    Depoimentos
+                </h2>
+                <h3 class="section-subtitle">
+                    O que as pessoas falam sobre nós
+                </h3>
+
+                <div id="feedbacks">
+                    <div class="feedback">
+                        <img src="src/images/Joao.jpg" class="feedback-avatar" alt="">
+
+                        <div class="feedback-content">
+                            <p>
+                                Pedro
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "O curso é incrível! Aprendi muito mais do que esperava. Recomendo a todos que queiram transformar suas vidas através da educação. Já chamei vários amigos para participarem também!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="src/images/avatar.png" class="feedback-avatar" alt="">
+
+                        <div class="feedback-content">
+                            <p>
+                                Maria Fernandes
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "Adorei a abordagem dos professores e a qualidade do conteúdo. O curso está me ajudando muito a me preparar para os vestibulares. Estou convidando meus colegas para se inscreverem também!"
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="src/images/wave.svg" alt="">
+
+        <div id="footer_items">
+            <span id="copyright">
+                &copy 2024 CPBR
+            </span>
+
+            <div class="social-media-buttons">
+                <a href="https://api.whatsapp.com/send?phone=55011987703005"> 
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="https://www.instagram.com/cursinhopopularbrasilandia?igsh=MThzNm5nNG1yOGxibw%3D%3D">
+                    <i class="fa-brands fa-instagram"></i> 
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61555384450944">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+     <script src="src/javascript/script.js"></script>
+   <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const userArea = document.getElementById('user-area');
+    const nomeUsuario = localStorage.getItem('nome'); // Pegar 'nome' como salvo nas páginas de login
+    const tipoUsuario = localStorage.getItem('tipo'); // Pegar 'tipo' como salvo nas páginas de login
+
+    if (nomeUsuario && tipoUsuario) { // Verificar se ambos existem
+        userArea.innerHTML = `
+            <span class="user-greeting">Olá, ${tipoUsuario} ${nomeUsuario}!</span>
+            <button class="btn-default" id="logout-btn">Sair</button>
+        `;
+
+        const logoutBtn = document.getElementById('logout-btn');
+        logoutBtn.addEventListener('click', () => {
+            localStorage.removeItem('nome'); // Limpar 'nome'
+            localStorage.removeItem('tipo'); // Limpar 'tipo'
+            localStorage.removeItem('token'); // Limpar 'token' para um logout completo
+            location.reload(); // Recarrega a página para atualizar o estado
+        });
+    } else {
+        // Se não houver usuário logado, garante que o link de cadastro está visível
+        userArea.innerHTML = `
+            <a href="./Login-Registro/cadastro.html" id="cadastro-link">
+                <button class="btn-default">Cadastre-se</button>
+            </a>
+        `;
+    }
+});
+</script>
+
+
+
+    </body>
+</html>

@@ -1,0 +1,99 @@
+/* Fontes e Cores */
+
+/* Fontes */
+@font-face {
+    font-family: 'FontName';
+    src: url("https://sitename.com/css/fonts/FontName.svg#filename") format("svg");
+  }
+  
+  /* Cores */
+  :root {
+    --color-primary-1: #primary-color-1;
+    --color-primary-6: #primary-color-6;
+    --green: green;
+    --white: white;
+    --gray: #434343;
+  }
+  
+  /* Restante do código */
+  
+  #menu {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+  }
+  
+  #Estudos {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 32px;
+  }
+  
+  .estudo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 20px;
+      gap: 18px;
+      width: 25%;
+      padding: 20px;
+      background-color: var(--green);
+      box-shadow: 0px 0px 12px 4px var(--white);
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .estudo-heart {
+      position: absolute;
+      background-color: var(--color-primary-6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.563rem;
+      color: var(--color-primary-1);
+      width: 70px;
+      height: 70px;
+      right: -10px;
+      top: -10px;
+      border-radius: 0px 37.5px 0px 42.5px;
+  }
+  
+  .estudo-description {
+      color: white;
+      text-align: center;
+  }
+  
+  .estudo-rate i {
+      color: var(--color-primary-6);
+  }
+  
+  .estudo-price {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+  }
+  
+  @media screen and (max-width: 1170px) {
+      #Estudos {
+          flex-wrap: wrap;
+          justify-content: center;
+      }
+  
+      .estudo {
+          width: calc(50% - 12px);
+      }
+  }
+  
+  @media screen and (max-width: 600px) {
+      .estudo {
+          width: 100%;
+      }
+  
+      #menu .section-subtitle {
+          text-align: center;
+      }
+  }

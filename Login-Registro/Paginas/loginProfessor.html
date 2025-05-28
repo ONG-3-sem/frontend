@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Página de Login - Professor</title>
+  <link rel="stylesheet" href="../css/style-paginaRA.css" />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+  <style>
+    h1,
+    h3 {
+      text-align: center;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background-color: #2fd342;
+      color: white;
+      text-align: center;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #bed9c1;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>LOGIN PROFESSOR</h1>
+    <h3>Digite seu email e senha para continuar</h3>
+
+    <form id="loginForm">
+      <label for="e-mail">E-mail:</label>
+      <input
+        type="email"
+        id="e-mail"
+        name="email"
+        required
+        placeholder="Digite seu E-mail"
+      />
+
+      <label for="senha">Senha:</label>
+      <input
+        type="password"
+        id="senha"
+        name="senha"
+        required
+        placeholder="Digite sua senha"
+      />
+
+      <button type="submit" class="btn">Entrar</button>
+    </form>
+
+    <a href="../Paginas/CadastroProfessor.html" class="btn">Cadastrar</a>
+    <a href="../cadastro.html" class="btn">Voltar</a>
+  </div>
+
+  <script>
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const email = document.getElementById("e-mail").value.trim();
+        const senha = document.getElementById("senha").value;
+
+        const data = { email: email, password: senha };
+
+        try {
+          const response = await fetch("http://localhost:8080/auth/login/teacher", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          });
+
+          let result;
+          try {
+            result = await response.json();
+          } catch (jsonError) {
+            result = { message: "Resposta inválida do servidor." };
+          }
+
+          if (response.ok) {
+            alert("Login realizado com sucesso!");
+            localStorage.setItem("token", result.token);
+            localStorage.setItem("nome", result.nome);
+localStorage.setItem("tipo", "Professor");
+            window.location.href = "../Paginas/CadastroValidado.html";
+          } else {
+            alert("Erro no login: Senha Inválida");
+          }
+        } catch (error) {
+          console.error("Erro de conexão:", error);
+          alert("Erro de conexão. Tente novamente mais tarde.");
+        }
+      });
+  </script>
+</body>
+</html>
