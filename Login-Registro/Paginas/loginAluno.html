@@ -83,7 +83,7 @@
   const data = { email: email, password: senha };
 
   try {
-    const response = await fetch("http://3.143.168.58:8080/auth/login/student", {
+    const response = await fetch("/auth/login/student", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
