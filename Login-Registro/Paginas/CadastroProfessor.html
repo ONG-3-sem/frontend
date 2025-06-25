@@ -4,14 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro de Professor</title>
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-    crossorigin="anonymous"
-  />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+        crossorigin="anonymous" />
   <style>
-    /* Mesmos estilos do cadastro de aluno */
     * {
       margin: 0;
       padding: 0;
@@ -158,57 +154,22 @@
       <label for="estado">Estado</label>
       <select id="estado" name="estado" required>
         <option value="" disabled selected>Selecione o estado</option>
-        <option value="AC">Acre</option>
-        <option value="AL">Alagoas</option>
-        <option value="AP">Amapá</option>
-        <option value="AM">Amazonas</option>
-        <option value="BA">Bahia</option>
-        <option value="CE">Ceará</option>
-        <option value="DF">Distrito Federal</option>
-        <option value="ES">Espírito Santo</option>
-        <option value="GO">Goiás</option>
-        <option value="MA">Maranhão</option>
-        <option value="MT">Mato Grosso</option>
-        <option value="MS">Mato Grosso do Sul</option>
-        <option value="MG">Minas Gerais</option>
-        <option value="PA">Pará</option>
-        <option value="PB">Paraíba</option>
-        <option value="PR">Paraná</option>
-        <option value="PE">Pernambuco</option>
-        <option value="PI">Piauí</option>
-        <option value="RJ">Rio de Janeiro</option>
-        <option value="RN">Rio Grande do Norte</option>
-        <option value="RS">Rio Grande do Sul</option>
-        <option value="RO">Rondônia</option>
-        <option value="RR">Roraima</option>
-        <option value="SC">Santa Catarina</option>
         <option value="SP">São Paulo</option>
-        <option value="SE">Sergipe</option>
-        <option value="TO">Tocantins</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="ES">Espírito Santo</option>
+        <!-- Adicione os demais estados conforme necessário -->
       </select>
 
-      <!-- Campos de senha com botão de mostrar -->
       <label for="senha">Senha</label>
       <div class="password-container">
-        <input
-          type="password"
-          id="senha"
-          name="senha"
-          required
-          placeholder="Digite a senha"
-        />
+        <input type="password" id="senha" name="senha" required placeholder="Digite a senha" />
         <i class="far fa-eye toggle-password" data-target="senha"></i>
       </div>
 
       <label for="confirmar_senha">Confirmar Senha</label>
       <div class="password-container">
-        <input
-          type="password"
-          id="confirmar_senha"
-          name="confirmar_senha"
-          required
-          placeholder="Confirme a senha"
-        />
+        <input type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Confirme a senha" />
         <i class="far fa-eye toggle-password" data-target="confirmar_senha"></i>
       </div>
 
@@ -219,54 +180,57 @@
   </div>
 
   <script>
-    const togglePassword = document.querySelectorAll(".toggle-password");
+    // Mostrar/ocultar senha
+    const togglePassword = document.querySelectorAll('.toggle-password');
 
-    togglePassword.forEach((icon) => {
-      icon.addEventListener("click", function () {
+    togglePassword.forEach(icon => {
+      icon.addEventListener('click', function () {
         const target = document.getElementById(this.dataset.target);
-        const type = target.getAttribute("type") === "password" ? "text" : "password";
-        target.setAttribute("type", type);
-        this.classList.toggle("fa-eye");
-        this.classList.toggle("fa-eye-slash");
+        const type = target.getAttribute('type') === 'password' ? 'text' : 'password';
+        target.setAttribute('type', type);
+        this.classList.toggle('fa-eye');
+        this.classList.toggle('fa-eye-slash');
       });
     });
 
+    // Envio do formulário
     document.getElementById("teacherForm").addEventListener("submit", async function (event) {
       event.preventDefault();
 
-      const senha = document.getElementById("senha").value.trim();
-      const confirmarSenha = document.getElementById("confirmar_senha").value.trim();
+      const form = event.target;
+      const senha = form.senha.value.trim();
+      const confirmarSenha = form.confirmar_senha.value.trim();
 
       if (senha !== confirmarSenha) {
-        alert("As senhas não conferem!");
+        alert("As senhas não coincidem.");
         return;
       }
 
-      const formData = {
-        nome: document.getElementById("nome").value.trim(),
-        cpf: document.getElementById("cpf").value.trim(),
-        email: document.getElementById("email").value.trim(),
-        rg: document.getElementById("rg").value.trim(),
-        data_nascimento: document.getElementById("data_nascimento").value,
-        telefone: document.getElementById("telefone").value.trim(),
-        formacao: document.getElementById("formacao").value.trim(),
-        area_atuacao: document.getElementById("area_atuacao").value.trim(),
-        cep: document.getElementById("cep").value.trim(),
-        endereco: document.getElementById("endereco").value.trim(),
-        numero: document.getElementById("numero").value.trim(),
-        complemento: document.getElementById("complemento").value.trim(),
-        cidade: document.getElementById("cidade").value.trim(),
-        estado: document.getElementById("estado").value,
+      const data = {
+        nome: form.nome.value.trim(),
+        cpf: form.cpf.value.trim(),
+        email: form.email.value.trim(),
         senha: senha,
+        rg: form.rg.value.trim(),
+        data_nascimento: form.data_nascimento.value,
+        telefone: form.telefone.value.trim(),
+        formacao: form.formacao.value.trim(),
+        area_atuacao: form.area_atuacao.value.trim(),
+        cep: form.cep.value.trim(),
+        endereco: form.endereco.value.trim(),
+        numero: form.numero.value.trim(),
+        complemento: form.complemento.value.trim(),
+        cidade: form.cidade.value.trim(),
+        estado: form.estado.value
       };
 
       try {
         const response = await fetch("http://3.143.168.58:8080/auth/register/teacher", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(data)
         });
 
         if (!response.ok) {
@@ -276,7 +240,8 @@
         }
 
         alert("Cadastro de professor realizado com sucesso!");
-        window.location.href = "../loginProfessor.html"; // Redireciona para login após cadastro
+        window.location.href = "../loginProfessor.html";
+
       } catch (error) {
         alert("Erro ao conectar com o servidor. Tente novamente mais tarde.");
         console.error(error);
