@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/styles/styles.css"> <!-- Se já tiver um arquivo de CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <title>Doações - Cursinho Popular Brasilândia</title>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-book" id="nav_logo"> Cursinho Popular Brasilandia</i>
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a href="index.html">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="doacoes.html">Doações</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="doacoes">
+            <div class="container">
+                <h1>Faça sua Doação</h1>
+                <p>Ajude a transformar vidas através da educação! Sua doação será utilizada para oferecer material didático, cursos e outras atividades para os estudantes do nosso Cursinho Popular.</p>
+
+                 <!-- Mensagens de sucesso ou erro -->
+            <div id="success-message" class="message success" style="display:none;">
+                <p>Obrigado pela sua doação! A sua contribuição será fundamental para nosso projeto.</p>
+            </div>
+            <div id="error-message" class="message error" style="display:none;">
+                <p>Ocorreu um erro ao processar sua doação. Tente novamente mais tarde.</p>
+            </div>
+                
+                <!-- Formulário de doação -->
+                <form id="donation-form">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="valor">Valor da Doação (R$)</label>
+                    <input type="number" id="valor" name="valor" required>
+
+                    <button type="submit">Doar Agora</button>
+                </form>
+
+                <p>Ou faça sua doação diretamente para nossa conta bancária:</p>
+
+                <!-- Seção da imagem quadrada com as informações bancárias -->
+                <div id="banco-info" class="center-content">
+                    <!-- Imagem quadrada (aqui você pode usar a imagem que preferir) -->
+                    <img src="src/images/conta-bancaria.png" alt="Conta Bancária" class="imagem-quadrada">
+
+                    <!-- Informações da conta -->
+                    <div class="informacoes-conta">
+                        <p><strong>Banco: XYZ</strong></p>
+                        <p><strong>Agência: 1234</strong></p>
+                        <p><strong>Conta: 56789-0</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <span>&copy; 2024 Cursinho Popular Brasilandia</span>
+        </div>
+    </footer>
+
+    <script src="src/javascript/script.js"></script>
+</body>
+</html>
